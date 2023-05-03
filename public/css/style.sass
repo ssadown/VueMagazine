@@ -1,0 +1,903 @@
+@charset "UTF-8"
+		@font-face 
+			font-display: swap 
+			font-weight: 300 
+			font-family: 'Main' 
+			font-style: normal 
+			src: url(../fonts/ofont.ru_Montserrat.woff2) format("woff2") 
+html 
+	-webkit-box-sizing: border-box 
+	box-sizing: border-box 
+*,
+::after,
+::before 
+	-webkit-box-sizing: inherit 
+	box-sizing: inherit 
+body 
+	min-width: 320px 
+	min-height: 100vh 
+	margin: 0 
+	background: rgb(0,0,0)
+	background: linear-gradient(163deg, rgba(0,0,0,1) 0%, rgba(21,46,62,1) 28%, rgba(27,17,115,1) 82%, rgba(4,0,255,1) 100%)
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-orient: vertical 
+	-webkit-box-direction: normal 
+	-ms-flex-direction: column 
+	flex-direction: column 
+	font-family: "Arial", sans-serif 
+	font-size: 16px 
+	line-height: 1.3 
+	color: #222 
+	-webkit-tap-highlight-color: transparent 
+	-webkit-font-smoothing: antialiased 
+	-moz-osx-font-smoothing: grayscale 
+img 
+	max-width: 100% 
+	height: auto 
+	-o-object-fit: contain 
+	object-fit: contain 
+	border-radius: 8px 
+a 
+	text-decoration: none 
+.sr-only 
+	position: absolute 
+	width: 1px 
+	height: 1px 
+	margin: -1px 
+	padding: 0 
+	border: 0 
+	overflow: hidden 
+	clip: rect(0, 0, 0, 0) 
+.container 
+	width: 1200px 
+	margin: 0 auto 
+	padding-left: 15px 
+	padding-right: 15px 
+.button 
+	margin: 0 
+	border: 0 
+	font: inherit 
+	background-color: transparent 
+	-webkit-tap-highlight-color: transparent 
+	display: inline-block 
+	padding: 25px 15px 
+	border-radius: 8px 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+	vertical-align: middle 
+	text-transform: uppercase 
+	cursor: pointer 
+	&:disabled 
+		opacity: .5 
+		cursor: not-allowed 
+.button-primery 
+	background-color: #1b1173
+	border: 1px solid #1b1173 
+	font-family: "Main", 'Arial', sans-serif 
+	color: white 
+	font-size: 13px 
+.button-primery:not(:disabled):focus,
+.button-primery:not(:disabled):hover 
+	background-color: transparent 
+	color: black
+.button-second 
+	background-color: transparent 
+	border: 1px solid black 
+	padding: 15px 
+	color: black 
+	font-size: 14px 
+.button-second:not(:disabled):focus,
+.button-second:not(:disabled):hover 
+	background-color: black 
+	color: white 
+.button-del 
+	margin: 0 
+	padding: 0 
+	border: 0 
+	font: inherit 
+	background-color: transparent 
+	-webkit-tap-highlight-color: transparent 
+	width: 20px 
+	height: 20px 
+.header 
+	background-color: transparent 
+.header-wrapper 
+	display: grid 
+	grid-template-columns: 380px 1fr 300px 40px 
+	grid-column-gap: 40px 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	-webkit-box-pack: justify 
+	-ms-flex-pack: justify 
+	justify-content: space-around 
+	padding-top: 23px 
+	padding-bottom: 23px 
+.header-info 
+	font-size: 16px 
+	font-weight: 500 
+	letter-spacing: .02em 
+	color: white 
+	text-transform: uppercase 
+.header-logo 
+	display: block 
+	width: 190px 
+	height: 33px 
+	margin: 0 auto 
+.header-tel 
+	margin-left: auto 
+	font-size: 14px 
+	font-weight: 500 
+	color: white 
+.header-cart 
+	position: relative 
+	height: 27px 
+	color: white 
+.header-count 
+	position: absolute 
+	top: -5px 
+	right: -3px 
+	background-color: transparent 
+	padding: 3px 
+	font-family: "Main", 'Arial', sans-serif 
+	font-size: 1.5vh 
+	line-height: 1 
+	color: white 
+.content 
+	-webkit-box-flex: 1 
+	-ms-flex-positive: 1 
+	flex-grow: 1 
+	padding-top: 35px 
+	padding-bottom: 100px 
+.content-top 
+	margin-bottom: 35px 
+.content-top-catalog 
+	margin-left: 310px 
+	text-align: center 
+.content-breadcrumbs 
+	margin-bottom: 10px 
+.content-title 
+	margin: 10px 0 
+	font-family: "Main", 'Arial', sans-serif 
+	font-size: 25px 
+	line-height: 35px 
+	color: white 
+	text-transform: uppercase 
+	span 
+		font-family: "Arial", sans-serif 
+		font-weight: 500 
+		font-size: 18px 
+		vertical-align: top 
+		color: white 
+.content-info 
+	font-size: 16px 
+	font-weight: 300 
+	line-height: 1 
+	color: white 
+.content-catalog 
+	display: grid 
+	grid-template-columns: 290px 1fr 
+	grid-gap: 20px 
+	-webkit-box-align: start 
+	-ms-flex-align: start 
+	align-items: flex-start 
+.filter 
+	background-color: white 
+	color: black 
+	border-radius: 8px 
+.filter-title 
+	margin: 0 
+	display: flex 
+	justify-content: center 
+	align-items: center 
+	padding: 25px 
+	border-bottom: 4px solid black 
+	font-family: "Main", 'Arial', sans-serif 
+	font-size: 16px 
+	line-height: 1 
+	text-transform: uppercase 
+.filter-form 
+	padding: 35px 25px 60px 
+.filter-submit 
+	width: 100% 
+	margin-bottom: 15px 
+.filter-reset 
+	width: 100% 
+.form-block 
+	border: 0 
+	padding: 0 
+	margin: 0 0 35px 
+.form-legend 
+	margin-bottom: 12px 
+	font-size: 14px 
+	line-height: 1 
+.form-label 
+	position: relative 
+	border-radius: 8px
+	display: block 
+	background-color: #fff 
+	color: #737373 
+	&:not(:last-child) 
+		margin-bottom: 25px 
+.form-label-price 
+	&::after 
+		content: '₽' 
+		position: absolute 
+		top: 32px 
+		right: 20px 
+		font-size: 16px 
+		line-height: 1 
+		color: #222 
+.form-label-select 
+	&::after 
+		content: '' 
+		position: absolute 
+		top: 50% 
+		right: 20px 
+		-webkit-transform: translateY(-50%) 
+		transform: translateY(-50%) 
+		width: 14px 
+		height: 7px 
+		background-image: url(../img/svg/icon-arrow-bottom.svg) 
+		background-repeat: no-repeat 
+		background-size: contain 
+.form-value 
+	position: absolute 
+	top: 10px 
+	left: 20px 
+	font-size: 12px 
+	line-height: 1 
+	color: #737373 
+	font-weight: 300 
+.form-input 
+	padding: 28px 45px 13px 20px 
+	width: 100% 
+	height: 65px 
+	background-color: transparent 
+	border: 1px solid black 
+	-webkit-box-shadow: none 
+	box-shadow: none 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+	color: #222 
+	font-size: 16px 
+	font-family: inherit 
+	line-height: 1 
+.form-input:focus,
+.form-input:hover 
+	outline: 0 
+	border-color: #272727 
+.form-input-area 
+	height: 140px 
+	resize: none 
+.form-select 
+	width: 100% 
+	height: 52px 
+	border-radius: 8px 
+	border: 1px solid black 
+	-webkit-appearance: none 
+	-moz-appearance: none 
+	appearance: none 
+	padding: 14px 35px 14px 18px 
+	color: #222 
+	font-size: 16px 
+	font-family: inherit 
+	line-height: 1 
+.form-counter 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	width: 150px 
+	height: 70px 
+	background-color: #fff 
+	border: 1px solid black 
+	button 
+		margin: 0 
+		padding: 0 
+		-webkit-tap-highlight-color: transparent 
+		display: block 
+		-ms-flex-negative: 0 
+		flex-shrink: 0 
+		width: 40px 
+	input 
+		padding: 23px 5px 
+		width: 70px 
+		border-radius: 0 
+		-webkit-box-shadow: none 
+		box-shadow: none 
+		color: #222 
+		font-size: 24px 
+		line-height: 1 
+		text-align: center 
+.form-counter button,
+.form-counter input 
+	height: 70px 
+	background-color: transparent 
+	border: 0 
+	font: inherit 
+.form-error 
+	position: absolute 
+	bottom: -17px 
+	left: 20px 
+	font-size: 11px 
+	line-height: 14px 
+	color: #ff2762
+.form-error-block 
+	padding: 25px 30px 
+	border: 3px solid #ff2762
+	border-radius: 1px 
+	h4 
+		margin: 0 0 4px 
+		font-weight: 500 
+		font-size: 17px 
+		line-height: 24px 
+		color: #ff2762 
+	p 
+		margin: 0 
+		font-size: 13px 
+		color: white 
+.colors 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	--border-color: black 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	-ms-flex-wrap: wrap 
+	flex-wrap: wrap 
+.colors-black 
+	--border-color: #222 
+.colors-item 
+	&:not(:last-child) 
+		margin-right: 4px 
+.colors-label 
+	position: relative 
+	cursor: pointer 
+	display: block 
+	border-radius: 50% 
+	padding: 3px 
+	border: 1px solid black 
+.colors-value,
+.colors-value::before 
+	border-radius: 50% 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+.colors-value 
+	display: block 
+	width: 20px 
+	height: 20px 
+	&::before 
+		content: '' 
+		position: absolute 
+		top: 50% 
+		left: 50% 
+		-webkit-transform: translate(-50%, -50%) 
+		transform: translate(-50%, -50%) 
+		width: 26px 
+		height: 26px 
+		border: 1px solid transparent 
+.colors-label:focus .colors-value::before,
+.colors-label:hover .colors-value::before,
+.colors-radio:checked~.colors-value::before 
+	border-color: var(--border-color) 
+.colors-radio 
+	&:focus 
+		& ~ .colors-value 
+			&::before 
+				opacity: .7 
+.check-list 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+.check-list-item 
+	&:not(:last-child) 
+		margin-bottom: 13px 
+.check-list-label 
+	display: block 
+	cursor: pointer 
+.check-list-desc 
+	position: relative 
+	display: block 
+	padding-left: 32px 
+	padding-top: 3px 
+	padding-bottom: 3px 
+	font-size: 16px 
+	line-height: 1 
+	&::before 
+		left: 0 
+		width: 22px 
+		height: 22px 
+		background-color: #fff 
+	&::after 
+		opacity: 0 
+		left: 4px 
+		width: 16px 
+		height: 13px 
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8l5 5L18 2' stroke='%23000' stroke-width='3'/%3E%3C/svg%3E") 
+		background-repeat: no-repeat 
+		background-size: contain 
+		-webkit-transition: all .2s ease 
+		transition: all .2s ease 
+	span 
+		color: #737373 
+.check-list-desc::after,
+.check-list-desc::before 
+	content: '' 
+	position: absolute 
+	top: 50% 
+	-webkit-transform: translateY(-50%) 
+	transform: translateY(-50%) 
+.check-list-label:focus .check-list-desc::after,
+.check-list-label:hover .check-list-desc::after 
+	opacity: .3 
+.check-list-check 
+	&:checked 
+		& ~ .check-list-desc 
+			&::after 
+				opacity: 1 
+.breadcrumbs 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	-ms-flex-wrap: wrap 
+	flex-wrap: wrap 
+.breadcrumbs-item 
+	position: relative 
+	&:not(:last-child) 
+		padding-right: 35px 
+	&:not(:last-child)::after 
+		content: '—' 
+		position: absolute 
+		top: 50% 
+		right: 15px 
+		-webkit-transform: translateY(-50%) 
+		transform: translateY(-50%) 
+		color: white 
+.breadcrumbs-link 
+	font-size: 14px 
+	line-height: 1 
+	color: white 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+.breadcrumbs-link[href]:focus,
+.breadcrumbs-link[href]:hover 
+	color: #222 
+.pics-wrapper 
+	margin-bottom: 20px 
+.pics-list 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	display: grid 
+	grid-template-columns: repeat(5, 1fr) 
+	grid-gap: 20px 
+.pics-link 
+	border-bottom: 3px solid transparent 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+.pics-link:focus,
+.pics-link:hover 
+	border-color: #272727 
+.pics-link-current 
+	border-color: #272727 
+.cart-field 
+	grid-row: 1/3 
+.cart-list 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+.cart-item 
+	&:not(:last-child) 
+		margin-bottom: 60px 
+.cart-form 
+	display: grid 
+	grid-template-columns: 1fr 370px 
+	grid-template-rows: auto 1fr 
+	grid-gap: 20px 50px 
+	-webkit-box-align: start 
+	-ms-flex-align: start 
+	align-items: flex-start 
+.cart-block 
+	background-color: white 
+	padding: 35px 30px 
+	color: black 
+	border-radius: 8px 
+.cart-button 
+	margin-top: 20px 
+	width: 100% 
+	display: flex 
+	justify-content: center 
+	align-items: center 
+.cart-desc,
+.cart-price 
+	margin: 0 0 15px 
+	font-size: 16px 
+	line-height: 22px
+	color: black 
+.cart-price 
+	font-size: 30px 
+	line-height: 48px 
+	span 
+		font-weight: 500 
+		font-size: 34px 
+		line-height: 48px 
+.cart-data 
+	display: grid 
+	grid-template-columns: repeat(2, 1fr) 
+	grid-gap: 5px 30px 
+	padding-bottom: 25px 
+	margin-bottom: 15px 
+	label 
+		&:not(:nth-child(4)):not(:nth-child(3)) 
+			grid-column: 1/-1 
+.cart-title 
+	margin: 0 0 20px 
+	font-family: "Main", 'Arial', sans-serif 
+	font-size: 14px 
+	line-height: 24px 
+	text-transform: uppercase
+	color: white 
+.cart-options 
+	&:not(:last-child) 
+		margin-bottom: 40px 
+		border-radius: 8px 
+.cart-orders 
+	list-style: none 
+	padding: 0 30px 25px 
+	margin: 0 -30px 25px 
+	border-bottom: 4px dashed #fff 
+.cart-order 
+	display: grid 
+	grid-template-columns: 1fr 90px 
+	grid-gap: 5px 20px 
+	&:not(:last-child) 
+		margin-bottom: 20px 
+	h3 
+		margin: 0 
+		font-size: 16px 
+		line-height: 22px 
+	b 
+		font-weight: 500 
+		font-size: 16px 
+		line-height: 24px 
+	span 
+		font-size: 12px 
+		line-height: 1 
+		color: white 
+.cart-total 
+	p 
+		margin: 0 
+		&:not(:last-child) 
+			margin-bottom: 5px 
+.cart-error 
+	grid-column: 2/3 
+.cart-message 
+	margin: 0 0 50px 
+	font-size: 16px 
+	line-height: 24px 
+	color: #000 
+.product 
+	display: grid 
+	grid-template-columns: 120px 280px 140px auto 20px 
+	grid-template-rows: repeat(3, -webkit-min-content) 
+	grid-template-rows: repeat(3, min-content) 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	grid-gap: 10px 20px 
+.product-pic 
+	align-self: flex-start 
+	grid-column: 1/2 
+	grid-row: 1/4
+.product-price
+	color: white	 
+.product-info,
+.product-title 
+	margin: 0 
+	grid-column: 2/3 
+	grid-row: 1/2 
+	font-size: 16px 
+	line-height: 22px 
+	color: white
+.product-info 
+	grid-row: 2/3 
+	font-size: 14px 
+	line-height: 1 
+	color: white 
+	span 
+		color: white 
+.product-info-color 
+	span 
+		position: relative 
+		display: inline-block 
+		padding-left: 30px 
+		vertical-align: top 
+		i 
+			left: 5px 
+			display: block 
+.options-value::before,
+.product-info-color span i 
+	position: absolute 
+	top: 50% 
+	-webkit-transform: translateY(-50%) 
+	transform: translateY(-50%) 
+	width: 20px 
+	height: 20px 
+	border-radius: 50% 
+.product-code 
+	grid-column: 2/3 
+	grid-row: 3/4 
+	font-size: 12px 
+	color: white 
+.product-del 
+	grid-column: 5/6 
+	grid-row: 1/2 
+.product-counter 
+	border: 1px solid #cfcfcf 
+	width: 120px 
+	height: 50px 
+	button 
+		height: 50px 
+		width: 30px 
+	input 
+		padding: 10px 5px 
+		height: 50px 
+		width: 60px 
+.options 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	display: grid 
+	grid-template-columns: repeat(2, 1fr) 
+	grid-gap: 30px 
+.options-label 
+	display: block 
+	cursor: pointer 
+	border-radius: 8px 
+	&:hover 
+		.options-value 
+			background-color: rgba(39, 39, 39, .6) 
+			&::before 
+				background-color: transparent 
+.options-value 
+	position: relative 
+	display: block 
+	background-color: #f2f2f2 
+	padding: 35px 30px 35px 67px 
+	font-size: 14px 
+	line-height: 1 
+	color: #222 
+	&::before 
+		content: '' 
+		left: 35px 
+		border: 4px solid #fff 
+		background-color: #fff 
+		-webkit-transition: all .2s ease 
+		transition: all .2s ease 
+.options-radio 
+	&:focus 
+		& ~ .options-value 
+			background-color: rgba(39, 39, 39, .6) 
+			&::before 
+				background-color: transparent 
+	&:checked 
+		& ~ .options-value 
+			background-color: #272727 
+			color: #fff 
+			&::before 
+				background-color: transparent 
+.dictionary 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+.dictionary-item 
+	display: grid 
+	grid-template-columns: 170px 1fr 
+	grid-gap: 20px 
+	font-size: 16px 
+	line-height: 24px
+	color: white 
+	&:not(:last-child) 
+		margin-bottom: 30px 
+.dictionary-key 
+	font-weight: 300 
+.pagination 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	-webkit-box-pack: center 
+	-ms-flex-pack: center 
+	justify-content: center 
+.pagination-item 
+	&:first-child 
+		margin-right: 25px 
+	&:last-child 
+		margin-left: 25px 
+.pagination-link 
+	display: block 
+	padding: 13px 3px 
+	height: 40px 
+	min-width: 40px 
+	font-size: 16px 
+	line-height: 1 
+	color: white
+	text-align: center 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+.pagination-link[href]:not(:disabled):focus,
+.pagination-link[href]:not(:disabled):hover 
+	opacity: .6 
+.pagination-link-current 
+	font-weight: 700 
+.pagination-link-disabled 
+	opacity: .6 
+	cursor: not-allowed 
+.catalog 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-orient: vertical 
+	-webkit-box-direction: normal 
+	-ms-flex-direction: column 
+	flex-direction: column 
+	-ms-flex-item-align: stretch 
+	align-self: stretch 
+.catalog-list 
+	padding: 0 
+	list-style: none 
+	display: grid 
+	grid-template-columns: repeat(3, 270px) 
+	grid-gap: 65px 30px 
+	margin: 0 0 70px 
+.catalog-pic 
+	display: block 
+	width: 270px 
+	height: 350px 
+	margin-bottom: 20px 
+	img 
+		width: 270px 
+		height: 350px 
+		-o-object-fit: cover 
+		object-fit: cover 
+.catalog-title 
+	margin: 0 0 10px 
+	font-weight: 400 
+	font-size: 16px 
+	line-height: 22px 
+	color: white 
+	a 
+		color: white
+		-webkit-transition: all .2s ease 
+		transition: all .2s ease 
+.catalog-title a:focus,
+.catalog-title a:hover 
+	opacity: .6 
+.catalog-price 
+	display: block 
+	margin-bottom: 10px 
+	font-size: 18px 
+	line-height: 24px 
+	font-weight: 500
+	color: white 
+.catalog-pagination 
+	margin-top: auto 
+.item 
+	display: grid 
+	grid-template-columns: repeat(2, 1fr) 
+	grid-gap: 55px 30px 
+	-webkit-box-align: start 
+	-ms-flex-align: start 
+	align-items: flex-start 
+.item-code 
+	font-size: 14px 
+	line-height: 1 
+	color: white 
+.item-title 
+	margin: 10px 0 22px 
+	font-size: 40px 
+	line-height: 50px 
+	font-weight: 400 
+	color: white
+.item-form 
+	padding: 60px 50px 
+	border-radius: 8px 
+	background-color: white 
+	color: black
+.item-price 
+	display: block 
+	margin-bottom: 15px 
+	font-weight: 500 
+	font-size: 40px 
+	line-height: 1 
+.item-sizes 
+	color: #898989 
+.item-row 
+	display: grid 
+	grid-template-columns: 150px 224px 
+	grid-gap: 15px 
+.social 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	-ms-flex-wrap: wrap 
+	flex-wrap: wrap 
+.social-item 
+	& + .social-item 
+		margin-left: 30px 
+.social-link 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+	color: white 
+.social-link:focus,
+.social-link:hover 
+	opacity: .5 
+.footer 
+	background-color: transparent 
+.footer-wrapper 
+	display: grid 
+	grid-template-columns: 550px 423px 
+	-webkit-box-pack: justify 
+	-ms-flex-pack: justify 
+	justify-content: space-between 
+	padding-top: 60px 
+	padding-bottom: 60px 
+.footer-link 
+	font-size: 14px 
+	line-height: 24px 
+	color: white 
+	border-bottom: 3px solid transparent 
+	-webkit-transition: all .2s ease 
+	transition: all .2s ease 
+.footer-link:focus,
+.footer-link:hover 
+	border-color: #292926 
+.footer-link--medium 
+	font-weight: 500 
+.footer-links 
+	margin: 0 
+	padding: 0 
+	list-style: none 
+	display: grid 
+	grid-template-columns: repeat(3, auto) 
+	grid-gap: 20px 30px 
+.footer-social 
+	margin-left: auto 
+	-ms-flex-item-align: start 
+	align-self: flex-start 
+.footer-copyright 
+	grid-row: 3/4 
+	align-self: flex-end 
+	font-family: "Main", 'Arial', sans-serif 
+	font-size: 12px 
+	color: white 
+	text-transform: uppercase 
+#not-found-block 
+	height: 65vh 
+	width: 100% 
+	display: flex 
+	justify-content: center 
+	align-items: center 
