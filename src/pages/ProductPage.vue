@@ -41,16 +41,18 @@
                 <div class="item-row">
                   <div class="form-counter">
                     <button type="button" aria-label="Убрать один товар" @click.prevent="amountDown()">
-                      <svg width="12" height="12" fill="currentColor">
-                        <use xlink:href="#icon-minus"></use>
-                      </svg>
+                      <svg width="12px" height="12px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                        <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="4" x2="20" y1="12" y2="12"/>
+ 
+                        </svg>
                     </button>
     
                     <input type="text" v-model.number="productAmount">
     
                     <button type="button" aria-label="Добавить один товар" @click.prevent="amountUp()">
-                      <svg width="12" height="12" fill="currentColor">
-                        <use xlink:href="#icon-plus"></use>
+                      <svg width="12px" height="12px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <path fill="#000000" fill-rule="evenodd" d="M9 17a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 10-2 0v6H3a1 1 0 000 2h6v6z"/>
                       </svg>
                     </button>
                   </div>
